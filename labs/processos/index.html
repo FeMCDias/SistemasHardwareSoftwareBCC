@@ -1,0 +1,999 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Carlos Menezes">
+      
+      
+        <link rel="canonical" href="https://insper.github.io/SistemasHardwareSoftwareBCC/labs/processos/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.3.1">
+    
+    
+      
+        <title>Inspercoin - Sistemas Hardware-Software - 2023/2</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.046329b4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.85d0ee34.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/termynal.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans+Extra+Condensed:700|Oxygen+Mono|Source+Sans+Pro:700|Source+Serif+Pro&amp;display=swap">
+<link rel="stylesheet" href="../../assets/css/devlife.css">
+
+
+    <script>
+        window.ihandout_config = JSON.parse(`{"report": {"api-base": "https://devlife.insper-comp.com.br/api/offerings/1/", "url": "https://devlife.insper-comp.com.br/api/offerings/1/exercises/"}}`);
+    </script>
+
+
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="preference" data-md-color-primary="brown" data-md-color-accent="amber">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#inspercoin" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Sistemas Hardware-Software - 2023/2" class="md-header__button md-logo" aria-label="Sistemas Hardware-Software - 2023/2" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sistemas Hardware-Software - 2023/2
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Inspercoin
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Insper/SistemasHardwareSoftwareBCC/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    sistemashardwaresoftware
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Sistemas Hardware-Software - 2023/2" class="md-nav__button md-logo" aria-label="Sistemas Hardware-Software - 2023/2" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Sistemas Hardware-Software - 2023/2
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Insper/SistemasHardwareSoftwareBCC/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    sistemashardwaresoftware
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sobre/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Entregas e Prazos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Aulas
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Aulas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aulas/01-inteiros/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01 - Inteiros na CPU
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aulas/02-ram/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    02 - Representação de dados em RAM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aulas/03-arquitetura-x86/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03 - Arquitetura x86-64
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aulas/04-funcoes-mov/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    04 -  Funções
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aulas/05-condicionais/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    05 - Condicionais
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aulas/06-condicionais-funcoes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    06 - Condicionais e funções
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Labs
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Labs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hackerlab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hackerlab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Dicas
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Dicas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../outros/github/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Github Password
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../outros/vbox/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Virtualbox
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introducao" class="md-nav__link">
+    Introdução
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entendendo-como-uma-blockchain-funciona" class="md-nav__link">
+    Entendendo como uma blockchain funciona
+  </a>
+  
+    <nav class="md-nav" aria-label="Entendendo como uma blockchain funciona">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hash" class="md-nav__link">
+    Hash
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bloco" class="md-nav__link">
+    Bloco
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#minerar-um-bloco" class="md-nav__link">
+    Minerar um Bloco
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blockchain" class="md-nav__link">
+    Blockchain
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gastando-a-grana" class="md-nav__link">
+    Gastando a Grana!
+  </a>
+  
+    <nav class="md-nav" aria-label="Gastando a Grana!">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#como-representamos-contas" class="md-nav__link">
+    Como representamos "contas"?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#como-garanto-que-a-transacao-e-valida" class="md-nav__link">
+    Como garanto que a transação é válida?
+  </a>
+  
+    <nav class="md-nav" aria-label="Como garanto que a transação é válida?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#off-topic-chaves-com-baixa-entropia" class="md-nav__link">
+    Off-Topic: chaves com baixa entropia
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#o-que-precisara-ser-feito" class="md-nav__link">
+    O que precisará ser feito
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#onde-desenvolver" class="md-nav__link">
+    Onde desenvolver?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#como-comecar" class="md-nav__link">
+    Como começar?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#avaliacao" class="md-nav__link">
+    Avaliação
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versoes-a-serem-entregues" class="md-nav__link">
+    Versões a serem entregues
+  </a>
+  
+    <nav class="md-nav" aria-label="Versões a serem entregues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tag-lab20x-versao-iniciante" class="md-nav__link">
+    Tag lab2.0.x: Versão Iniciante
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tag-lab21x-versao-em-desenvolvimento" class="md-nav__link">
+    Tag lab2.1.x: Versão Em Desenvolvimento
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tag-lab22x-versao-pleno-atingiu-objetivos-medios" class="md-nav__link">
+    Tag lab2.2.x: Versão Pleno - Atingiu objetivos médios
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tag-lab23x-versao-senior-atingiu-objetivos-avancados" class="md-nav__link">
+    Tag lab2.3.x: Versão Sênior - Atingiu objetivos avançados
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tag-lab24x-versao-especialista-demonstra-conhecimentos-que-superam-expectativas" class="md-nav__link">
+    Tag lab2.4.x: Versão Especialista - Demonstra conhecimentos que Superam Expectativas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prazo" class="md-nav__link">
+    Prazo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#referencias" class="md-nav__link">
+    Referências
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="inspercoin">Inspercoin<a class="headerlink" href="#inspercoin" title="Permanent link">&para;</a></h1>
+<h2 id="introducao">Introdução<a class="headerlink" href="#introducao" title="Permanent link">&para;</a></h2>
+<p>No Laboratório de Processos, iremos implementar uma blockchain da nossa própria cryptomoeda: a <strong>Inspercoin</strong>!</p>
+<p>Blockchain é uma tecnologia que permite a criação de registros digitais seguros, transparentes e imutáveis. Essa tecnologia funciona como um livro-caixa descentralizado e distribuído, onde cada transação é registrada em blocos de informações interligados. Cada bloco contém uma série de transações válidas, incluindo informações sobre o remetente, destinatário, data e horário da transação, entre outros dados relevantes.</p>
+<p>Em uma blockchain há uma rede de computadores interligados que validam as transações de forma colaborativa. Dessa forma, todas as informações são armazenadas em vários pontos da rede, garantindo maior segurança e confiabilidade.</p>
+<p>Por fim, vale ressaltar que a criptografia é outro elemento fundamental no funcionamento do blockchain. Ela garante a proteção dos dados e impede que informações sensíveis sejam acessadas por pessoas não autorizadas. Além disso, a criptografia também torna mais difícil a realização de fraudes, já que alterar dados em um bloco exige muito poder computacional e seria rapidamente identificado pela rede. Em resumo, o blockchain é uma tecnologia revolucionária capaz de transformar diversos setores da economia, oferecendo maior segurança e transparência às transações.</p>
+<h2 id="entendendo-como-uma-blockchain-funciona">Entendendo como uma blockchain funciona<a class="headerlink" href="#entendendo-como-uma-blockchain-funciona" title="Permanent link">&para;</a></h2>
+<p>Para entender como uma blockchain funciona, precisamos revisar alguns conceitos.</p>
+<h3 id="hash">Hash<a class="headerlink" href="#hash" title="Permanent link">&para;</a></h3>
+<p>Um <strong>hash</strong> é uma função matemática que transforma dados de tamanho variável em um valor fixo de comprimento menor. Essa transformação é fácil de fazer na ida (fácil de calcular o <strong>hash</strong> a partir de uma mensagem original) mas muito difícil ou impossível de obter com certeza os dados originais a partir do valor <strong>hash</strong>. Isso faz com que o <strong>hash</strong> seja muito utilizado em sistemas de segurança.</p>
+<p>Acesse <a href="https://andersbrownworth.com/blockchain/hash">https://andersbrownworth.com/blockchain/hash</a> e digite algum texto. Você verá o <strong>hash</strong> sendo calculado em tempo real.</p>
+<h3 id="bloco">Bloco<a class="headerlink" href="#bloco" title="Permanent link">&para;</a></h3>
+<p>Um <strong>bloco</strong> é uma unidade básica de <strong>armazenamento de dados</strong> de uma blockchain. Cada bloco contém um conjunto de mensagens armazenadas. No nosso caso, ao invés de armazenar mensagens de conversação, a nossa mensagem conterá os dados de uma transação financeira da Inspercoin:</p>
+<ul>
+<li>Origem dos recursos</li>
+<li>Destino dos recursos</li>
+<li>Valor a ser transferido</li>
+<li>Data da transação</li>
+<li>Etc.</li>
+</ul>
+<p><img alt="" src="../img/block.png" /></p>
+<h3 id="minerar-um-bloco">Minerar um Bloco<a class="headerlink" href="#minerar-um-bloco" title="Permanent link">&para;</a></h3>
+<p>O Bloco não deve depender de uma autoridade central para validar as transações. Em nosso caso, o processo de validação envolve a resolução de um problema matemático conhecido como prova de trabalho (PoW).</p>
+<p>Ao concatenar as informações da mensagem ou dados do bloco com as informações do bloco (por exemplo, seu ID ou número), podemos calcular seu <strong>hash</strong>. Minerar ou validar um bloco envolverá concatenar este texto anterior com algum ruído aleatório (<code>nonce</code>) e recalcular o <strong>hash</strong> até que seja obtido um <strong>hash</strong> com um número mínimo de zeros no seu inicio. A quantidade de zeros especifica o nível de dificuldade da rede, quanto mais zeros, é esperado que mais tempo/poder computacional seja utilizado para minerar o bloco.</p>
+<p><img alt="" src="../img/miner.png" /></p>
+<p>Quando um bloco é validado, ele é adicionado à blockchain e torna-se parte do histórico de transações registrado na blockchain.</p>
+<h3 id="blockchain">Blockchain<a class="headerlink" href="#blockchain" title="Permanent link">&para;</a></h3>
+<p>De posse dos blocos, para formar a blockchain basta vincular cada bloco ao bloco imediatamente anterior. Então, cada bloco guarda o <strong>hash</strong> do <strong>bloco anterior</strong>. Além disso, o primeiro bloco é conhecido como <strong>Genesis Block</strong>.</p>
+<p><img alt="" src="../img/blockchain.png" /></p>
+<p>Lembre-se que encontrar o <strong>nonce</strong> para que o <strong>hash</strong> tenha o número requisitado de zeros é algo complicado. Então, neste caso a PoW garante a segurança da rede, pois seria custoso computacionalmente recalcular blocos antigos (para mudar os valores aceitos pela rede). Assim, nossos blocos permanecem entrelaçados.</p>
+<p><img alt="" src="../img/blockchain_2.png" /></p>
+<p>Um passo importante será fazer o broadcasting do bloco recém minerado, pois não basta apenas você "acreditar" neste bloco!</p>
+<h3 id="gastando-a-grana">Gastando a Grana!<a class="headerlink" href="#gastando-a-grana" title="Permanent link">&para;</a></h3>
+<p>Já discutimos brevemente que iremos armazenar os dados da transação na mensagem do bloco. Uma questão importante é:</p>
+<h4 id="como-representamos-contas">Como representamos "contas"?<a class="headerlink" href="#como-representamos-contas" title="Permanent link">&para;</a></h4>
+<p>Iremos utilizar "endereços". Em nosso desenho, um endereço será uma string de 64 caracteres hexadecimais (cada posição tem de <code>0..9A..F</code>).</p>
+<h4 id="como-garanto-que-a-transacao-e-valida">Como garanto que a transação é válida?<a class="headerlink" href="#como-garanto-que-a-transacao-e-valida" title="Permanent link">&para;</a></h4>
+<p>Aqui, uma distinção precisa ficar clara. Minerar um bloco envolve encontrar o <code>nonce</code> que, concatenado às demais informações do bloco, gera um <strong>hash</strong> com um determinado número de zeros em seu início.</p>
+<p>Porém, o que irá impedir do conteúdo da mensagem ou transação (dados armazenados no bloco) ser inválido? Por exemplo, imagine a transação que diz <code>"transfira 100 reais do joão para o josé"</code>. A transação só será válida se:</p>
+<ul>
+<li><strong>João tiver saldo suficiente</strong>. Precisamos prevenir gasto duplo (sai mais dinheiro que o que entrou no endereço).</li>
+<li>Soubermos de fato que é <strong>realmente o João</strong> a fazer a transferência.</li>
+</ul>
+<p>O primeiro problema será abordado pela própria natureza global e entrelaçada da blockchain. Pelo histórico de transações, podemos verificar o saldo dos <strong>endereços</strong> e rejeitar blocos com transações sem saldo (endereços de origem sem saldo).</p>
+<p>O segundo problema é resolvido pelo uso de uma técnica de criptografia: chave pública e privada. O emissor irá utilizar uma chave privada (guardada apenas para si próprio) para <strong>assinar</strong> a transação. A assinatura será uma string a ser enviada junto com a transação. Conhecendo os dados da <strong>transação</strong> (a mensagem a ser assinada), a <strong>assinatura</strong> e a chave <strong>pública</strong>, podemos verificar matematicamente que a transação foi de fato assinada pelo proprietário da chave privada <strong>sem ter acesso à ela</strong>!</p>
+<p>Novamente, será computacionalmente fácil validar a assinatura, mas computacionalmente difícil descobrir a chave privada!</p>
+<p>Para saber mais, acesse <a href="https://auth0.com/blog/how-to-explain-public-key-cryptography-digital-signatures-to-anyone/">https://auth0.com/blog/how-to-explain-public-key-cryptography-digital-signatures-to-anyone/</a></p>
+<h5 id="off-topic-chaves-com-baixa-entropia">Off-Topic: chaves com baixa entropia<a class="headerlink" href="#off-topic-chaves-com-baixa-entropia" title="Permanent link">&para;</a></h5>
+<p>Não é só porque foi gerado um bando de hexas aleatórios que parecem indecifráveis que a chave é segura. Para ser de fato segura, suas chaves precisam ter alta entropia.</p>
+<p>Para entenderem o conceito, abra o site <a href="https://andersbrownworth.com/blockchain/hash">https://andersbrownworth.com/blockchain/hash</a> e digite "<code>super mario bros</code>". Se as chaves dependem de nomes de filmes, atores, músicos ou datas, uma hacker espertinho poderia testar por força bruta estas combinações mais fáceis de adivinhar, então não será muito difícil descobrir as suas senhas (incluindo <code>super mario bros</code>).</p>
+<p>Leia mais em <a href="https://blog.mycrypto.com/your-crypto-wouldnt-be-secure-without-entropy">https://blog.mycrypto.com/your-crypto-wouldnt-be-secure-without-entropy</a> e <a href="https://www.wired.com/story/blockchain-bandit-ethereum-weak-private-keys/">https://www.wired.com/story/blockchain-bandit-ethereum-weak-private-keys/</a></p>
+<h2 id="o-que-precisara-ser-feito">O que precisará ser feito<a class="headerlink" href="#o-que-precisara-ser-feito" title="Permanent link">&para;</a></h2>
+<p>Você precisará implementar em C um aplicativo que consegue minerar inspercoin e gerar transações. Será disponibilizado um código básico que deverá ser personalizado. Considere que cada bloco da Inspercoin armazena apenas uma transação.</p>
+<p>Para manter um maior controle no escopo da atividade, implementamos uma API que fará a intermediação entre os mineradores. Vocês terão que consumir a API para requisitar informações sobre transações, blocos, dificuldade, etc.</p>
+<p>Veja a documentação das rotas em <a href="http://sishard.insper-comp.com.br/inspercoin/docs">http://sishard.insper-comp.com.br/inspercoin/docs</a></p>
+<h2 id="onde-desenvolver">Onde desenvolver?<a class="headerlink" href="#onde-desenvolver" title="Permanent link">&para;</a></h2>
+<p>Foi criado uma pasta <code>lab/02-inspercoin</code> em seu repositório de entregas da disciplina. Edite o arquivo <code>inspercoin.c</code> e comece!</p>
+<p>Para compilar, utilize obrigatoriamente:</p>
+<div class="termy">
+
+    <div class="highlight"><pre><span></span><code><span class="gp">$ </span>make<span class="w"> </span>rebuild
+</code></pre></div>
+
+</div>
+
+<h2 id="como-comecar">Como começar?<a class="headerlink" href="#como-comecar" title="Permanent link">&para;</a></h2>
+<p>Faça <code>git pull</code> no seu repositório de atividades e leia o <code>README.md</code> na pasta do lab. Ainda, copie códigos deste repositório <a href="https://github.com/macielcalebe/inspercoin">https://github.com/macielcalebe/inspercoin</a> e implemente as funções faltantes (caso queira, pode copiar todos os arquivos para dentro da sua pasta do lab). Não precisa começar do zero!</p>
+<h2 id="avaliacao">Avaliação<a class="headerlink" href="#avaliacao" title="Permanent link">&para;</a></h2>
+<p>O programa será avaliado usando uma rubrica que descreve as funcionalidades implementadas. Quanto maior o número de funcionalidades, maior será a nota. Apesar de cada conceito envolver a entrega de uma tag no servidor de testes, a nota final da atividade será o maior conceito implementado, <strong>considerando que passou em todos os anteriores</strong>. Ex:</p>
+<ul>
+<li>Se passar na <code>lab2.0.x</code>, <strong>não passar na <code>lab2.1.x</code></strong>, passar na <code>lab2.2.x</code>, não passar na <code>lab2.3.x</code> a nota final será a da <code>lab2.0.x</code>.</li>
+</ul>
+<p><strong>Atenção:</strong> Os testes automáticos serão nossa forma principal de avaliação. Entretanto, o professor poderá utilizar processos extras de avaliação, como: entrevistas, revisão manual de código.</p>
+<h2 id="versoes-a-serem-entregues">Versões a serem entregues<a class="headerlink" href="#versoes-a-serem-entregues" title="Permanent link">&para;</a></h2>
+<p>Entregue cada versão utilizando o padrão já conhecido. Exemplo da versão <code>lab2.0.x</code>:</p>
+<div class="termy">
+
+    <div class="highlight"><pre><span></span><code><span class="gp">$ </span>git<span class="w"> </span>tag<span class="w"> </span>-a<span class="w"> </span>lab2.0.55<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;lab2.0.55&quot;</span>
+<span class="gp">$ </span>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>lab2.0.55
+</code></pre></div>
+
+</div>
+
+<p>Segue lista de versões.</p>
+<h3 id="tag-lab20x-versao-iniciante">Tag <code>lab2.0.x</code>: Versão Iniciante<a class="headerlink" href="#tag-lab20x-versao-iniciante" title="Permanent link">&para;</a></h3>
+<p>O programa lê um arquivo de texto <code>config.ic</code> na raiz do repositório, que contém as variáveis de ambiente a serem utilizadas pelo programa em execução. Exemplo de conteúdo do arquivo:</p>
+<div class="highlight"><pre><span></span><code>INSPER_COIN_URL=http://sishard.insper-comp.com.br/inspercoin/
+DEFAULT_WALLET=to_rico
+</code></pre></div>
+<p>Conforme o exemplo, todas as chamadas de API devem ser feitas a partir desta origem contida em <code>INSPER_COIN_URL</code>. Então, para ler a blockchain, o programa deve automaticamente utilizar:
+<code>http://sishard.insper-comp.com.br/inspercoin/blockchain</code></p>
+<p>Para testar, utilizem estas possíveis APIs como <code>INSPER_COIN_URL</code>:</p>
+<ul>
+<li><a href="http://sishard.insper-comp.com.br/inspercoin/">http://sishard.insper-comp.com.br/inspercoin/</a></li>
+<li><a href="http://sishard.insper-comp.com.br/lubacoin/">http://sishard.insper-comp.com.br/lubacoin/</a></li>
+<li><a href="http://sishard.insper-comp.com.br/lc/">http://sishard.insper-comp.com.br/lc/</a></li>
+<li><a href="http://sishard.insper-comp.com.br/menezescoin/">http://sishard.insper-comp.com.br/menezescoin/</a></li>
+<li><a href="http://sishard.insper-comp.com.br/inspercoin_so_que_com_url_grande/">http://sishard.insper-comp.com.br/inspercoin_so_que_com_url_grande/</a></li>
+<li><a href="http://3.142.157.80/inspercoin/">http://3.142.157.80/inspercoin/</a></li>
+<li><a href="http://3.142.157.80/lubacoin/">http://3.142.157.80/lubacoin/</a></li>
+<li><a href="http://3.142.157.80/lc/">http://3.142.157.80/lc/</a></li>
+<li><a href="http://3.142.157.80/menezescoin/">http://3.142.157.80/menezescoin/</a></li>
+<li><a href="http://3.142.157.80/inspercoin_so_que_com_url_grande/">http://3.142.157.80/inspercoin_so_que_com_url_grande/</a></li>
+</ul>
+<p>Se quiser fazer testes (ex: ver a blockchain), todas tem a rota <code>/docs</code> para abrir no navegador:</p>
+<ul>
+<li><a href="http://sishard.insper-comp.com.br/inspercoin/docs">http://sishard.insper-comp.com.br/inspercoin/docs</a></li>
+<li><a href="http://sishard.insper-comp.com.br/lubacoin/docs">http://sishard.insper-comp.com.br/lubacoin/docs</a></li>
+<li><a href="http://sishard.insper-comp.com.br/menezescoin/docs">http://sishard.insper-comp.com.br/menezescoin/docs</a></li>
+</ul>
+<p>As duas últimas funcionam como forks da blockchain, ou seja, cada uma será uma blockchain diferente após o bloco gênesis.</p>
+<p>O programa pode ser chamado pela linha de comando, utilizando as seguintes sintaxes:</p>
+<div class="highlight"><pre><span></span><code><span class="go">./inspercoin criar carteira &lt;nome&gt;</span>
+<span class="go">./inspercoin enviar &lt;valor&gt; da carteira &lt;carteira&gt; para endereco &lt;chave_publica_destino&gt; com recompensa &lt;valor_recompensa&gt;</span>
+</code></pre></div>
+<p>Requisitos:</p>
+<ul>
+<li>No arquivo <code>config.ic</code>, a chave <code>DEFAULT_WALLET</code> poderá estar em qualquer linha, o mesmo para <code>INSPER_COIN_URL</code>. Cada linha sempre começa com o nome da variável de ambiente (não conterá espaços), seguida por um igual (sem espaços antes ou depois), seguida pelo valor da variável (que também não conterá espaços).</li>
+<li>Em <code>./inspercoin criar carteira &lt;nome&gt;</code> o programa deve criar dois arquivos (<code>&lt;nome&gt;.private</code> contendo a chave privada em uma string de 128 hexa e <code>&lt;nome&gt;.public</code> contendo uma chave de 64 hexa). Nota que as chaves públicas é que irão servir de endereço de <strong>origem</strong> e <strong>destino</strong> nas transações. Este código está pronto, garanta que continua funcionando!</li>
+<li>Em <code>./inspercoin enviar &lt;valor&gt; da carteira &lt;carteira&gt; para endereco &lt;chave_publica_destino&gt; com recompensa &lt;valor_recompensa&gt;</code> o programa lê a carteira, usa a chave privada para assinar a transação e a chave pública como origem do montante! Esta chamada está praticamente pronta, bastando alterar a URL da API para ser lida do arquivo de configuração.</li>
+</ul>
+<p>Importante: a variável <code>DEFAULT_WALLET</code> será utilizada apenas na próxima tag/versão!</p>
+<p><strong>NOTA desta versão</strong>: 2.0</p>
+<h3 id="tag-lab21x-versao-em-desenvolvimento">Tag <code>lab2.1.x</code>: Versão Em Desenvolvimento<a class="headerlink" href="#tag-lab21x-versao-em-desenvolvimento" title="Permanent link">&para;</a></h3>
+<p>Todas as transações sem origem (ex: sem uso do <code>da carteira &lt;endereço&gt;</code>) e de mineração sem destino devem ser feitas para a carteira padrão definida na variável de ambiente <code>DEFAULT_WALLET</code> da tag anterior (ou seja, ler os arquivos <code>to_rico.private</code> para assinar e <code>to_rico.public</code> para servir como endereço de origem/destino).</p>
+<p>Além dos comandos da versão anterior, o programa pode ser chamado pela linha de comando, utilizando as seguintes sintaxes:</p>
+<div class="highlight"><pre><span></span><code><span class="go">./inspercoin enviar &lt;valor&gt; para endereco &lt;chave_publica_destino&gt; com recompensa &lt;valor_recompensa&gt;</span>
+<span class="go">./inspercoin minear transacao na carteira &lt;carteira&gt;</span>
+<span class="go">./inspercoin minear transacao</span>
+</code></pre></div>
+<p>Requisitos:</p>
+<ul>
+<li>Em <code>./inspercoin enviar &lt;valor&gt; para endereco &lt;chave_publica_destino&gt; com recompensa &lt;valor_recompensa&gt;</code> note que não foi informado uma carteira. Deverá ser utilizada a indicada em <code>DEFAULT_WALLET</code> no <code>config.ic</code>. O mesmo vale para <code>./inspercoin minear transacao</code>, onde o endereço contido na chave pública da carteira padrão deve ser o endereço da recompensa.</li>
+<li>Em <code>./inspercoin minear transacao na carteira &lt;carteira&gt;</code> o programa minera uma transação, formando um bloco. Caso o programa tente minerar uma transação mas falhe (porque outro usuário já minerou e fez broadcast desta transação primeiro), então o programa apenas retorna mensagem adequada de que não foi possível fazer o broadcasting do bloco. Para minerar transações, será preciso corrigir a função <code>miner_address</code>, informando corretamente o endereço de destino da recompensa. Além disso, será preciso corrigir a função <code>get_last_block_hash</code> pois a mesma está retornando sempre zeros, mas será necessário utilizar as rotas da API para buscar pelo hash do último bloco minerado!</li>
+</ul>
+<p><strong>NOTA desta versão</strong>: 3.5</p>
+<h3 id="tag-lab22x-versao-pleno-atingiu-objetivos-medios">Tag <code>lab2.2.x</code>: Versão Pleno - Atingiu objetivos médios<a class="headerlink" href="#tag-lab22x-versao-pleno-atingiu-objetivos-medios" title="Permanent link">&para;</a></h3>
+<p>Além dos comandos da versão anterior, o programa pode ser chamado pela linha de comando, utilizando as seguintes sintaxes:</p>
+<div class="highlight"><pre><span></span><code><span class="go">./inspercoin minear &lt;qtde&gt; transacoes</span>
+</code></pre></div>
+<p>Requisitos:</p>
+<ul>
+<li>Em <code>./inspercoin minear &lt;qtde&gt; transacoes</code> o programa cria <code>&lt;qtde&gt;</code> processos que rodam concorrentemente tentando minerar blocos.</li>
+<li>O programa pai só encerra após todos os filhos retornarem.</li>
+<li>Exiba mensagens contendo informações sobre blocos minerados com sucesso!</li>
+</ul>
+<p><strong>NOTA desta versão</strong>: 5.0</p>
+<h3 id="tag-lab23x-versao-senior-atingiu-objetivos-avancados">Tag <code>lab2.3.x</code>: Versão Sênior - Atingiu objetivos avançados<a class="headerlink" href="#tag-lab23x-versao-senior-atingiu-objetivos-avancados" title="Permanent link">&para;</a></h3>
+<p>Além dos comandos da versão anterior, o programa pode ser chamado pela linha de comando, utilizando as seguintes sintaxes:</p>
+<div class="highlight"><pre><span></span><code><span class="go">./inspercoin minear &lt;qtde_tran&gt; transacoes em &lt;qtde_proc&gt; processos</span>
+</code></pre></div>
+<p>Requisitos:</p>
+<ul>
+<li>O programa faz requisições à API e mantém em execução <code>&lt;qtde_proc&gt;</code> processos rodando concorrentemente minerando transações. Se a mineração de algum bloco falhar porque o bloco foi minerado primeiro por outra pessoa na rede, apenas ignore (não precisa subir nova execução).</li>
+<li>Caso faça uma chamada à API e não consiga transações suficientes para iniciar pelo menos <qtde_proc> processos, ignore e suba apenas o que conseguir! Observe que até aqui a API de GET transações deverá ser chamada apenas uma vez.</li>
+</ul>
+<p><strong>NOTA desta versão</strong>: 8.0</p>
+<h3 id="tag-lab24x-versao-especialista-demonstra-conhecimentos-que-superam-expectativas">Tag <code>lab2.4.x</code>: Versão Especialista - Demonstra conhecimentos que Superam Expectativas<a class="headerlink" href="#tag-lab24x-versao-especialista-demonstra-conhecimentos-que-superam-expectativas" title="Permanent link">&para;</a></h3>
+<p>Além dos comandos da versão anterior, o programa pode ser chamado pela linha de comando, utilizando as seguintes sintaxes:</p>
+<div class="highlight"><pre><span></span><code><span class="go">./inspercoin minear em &lt;qtde_proc&gt; processos</span>
+<span class="go">./inspercoin minear em &lt;qtde_proc&gt; processos na carteira &lt;carteira&gt;</span>
+</code></pre></div>
+<p>Requisitos:</p>
+<ul>
+<li>O programa realiza requisições de transações e mantém <code>&lt;qtde_proc&gt;</code> processos rodando concorrentemente tentando minerar transações. Aqui, para cada filho que retornar, um novo filho é criado para minerar uma transação diferente. Caso não existam transações, o pai deve tentar subir novamente um filho em <code>5</code> segundos (buscar por nova transação, iniciando a mineração no filho, caso exista transação esperando mineração). A ideia é manter <qtde_proc>` processos rodando sempre que possível. Observe que a API de GET transações precisará ser chamada múltiplas vezes.</li>
+<li>Ao receber CTRL+C, o programa pai encerra todos os filhos e sai com sinal adequado. Ao sair, apenas o programa pai deve exibir a mensagem na saída padrão <code>Encerrando mineração!\n</code>.</li>
+</ul>
+<p><strong>NOTA desta versão</strong>: 10.0</p>
+<h3 id="prazo">Prazo<a class="headerlink" href="#prazo" title="Permanent link">&para;</a></h3>
+<p><a href="../../sobre">Clique Aqui</a></p>
+<h3 id="referencias">Referências<a class="headerlink" href="#referencias" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Parte do texto foi escrito utilizando <a href="https://chatbot.theb.ai/">https://chatbot.theb.ai/</a></li>
+</ul>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      Last update:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 15, 2023</span>
+      
+    
+  </small>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.0.0/js-yaml.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/gh/insper-education/active-handout-plugins-js@main/package/plugin-bundle.js"></script>
+      
+        <script src="../../js/termynal.js"></script>
+      
+        <script src="../../js/custom.js"></script>
+      
+        <script src="../../search/main.js"></script>
+      
+    
+  </body>
+</html>
